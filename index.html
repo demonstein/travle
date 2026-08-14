@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>🇨🇳 난징 3박 4일 여행 가이드 (입장료 & 예매 정보 포함)</title>
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --primary-light: #eff6ff;
+            --accent: #d97706;
+            --bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text-dark: #1e293b;
+            --text-muted: #64748b;
+            --border: #e2e8f0;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background-color: var(--bg);
+            color: var(--text-dark);
+            line-height: 1.6;
+            padding-bottom: 40px;
+        }
+        .header {
+            background: linear-gradient(135deg, #1e3a8a, #3b82f6);
+            color: white;
+            padding: 24px 20px;
+            text-align: center;
+            border-bottom-left-radius: 20px;
+            border-bottom-right-radius: 20px;
+            box-shadow: 0 4px 12px rgba(30, 58, 138, 0.15);
+        }
+        .header h1 { font-size: 22px; font-weight: 700; margin-bottom: 6px; }
+        .header p { font-size: 13px; opacity: 0.9; }
+        
+        .container { padding: 16px; max-width: 600px; margin: 0 auto; }
+        
+        .card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            padding: 18px;
+            margin-bottom: 16px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            border: 1px solid var(--border);
+        }
+        
+        .card-title {
+            font-size: 17px;
+            font-weight: 700;
+            color: var(--primary);
+            border-bottom: 2px solid var(--primary-light);
+            padding-bottom: 8px;
+            margin-bottom: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .item {
+            margin-bottom: 16px;
+            padding-bottom: 14px;
+            border-bottom: 1px dashed var(--border);
+        }
+        .item:last-child { border-bottom: none; margin-bottom: 0; padding-bottom: 0; }
+        
+        .time { font-size: 12px; font-weight: 700; color: #dc2626; display: inline-block; margin-bottom: 2px; }
+        .place-name { font-size: 16px; font-weight: 700; color: var(--text-dark); }
+        .cn-name { font-size: 13px; color: var(--text-muted); margin-bottom: 4px; }
+        .desc { font-size: 13px; color: #475569; background: #f1f5f9; padding: 8px 10px; border-radius: 8px; margin: 6px 0; }
+        
+        .info-badge {
+            display: inline-block;
+            background: #fef3c7;
+            color: #92400e;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 3px 10px;
+            border-radius: 12px;
+            margin-top: 4px;
+            margin-bottom: 4px;
+        }
+        
+        .booking-badge {
+            display: inline-block;
+            background: #e0f2fe;
+            color: #0369a1;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 3px 10px;
+            border-radius: 12px;
+            margin-top: 4px;
+            margin-bottom: 4px;
+        }
+
+        .btn-group { display: flex; gap: 6px; margin-top: 8px; flex-wrap: wrap; }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 600;
+            text-decoration: none;
+            color: #fff;
+            gap: 4px;
+        }
+        .btn-apple { background-color: #007aff; }
+        .btn-amap { background-color: #2c82f8; }
+        .btn-web { background-color: #64748b; }
+        
+        .food-box {
+            background-color: #fffaf0;
+            border-left: 4px solid #dd6b20;
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 13px;
+            margin-top: 14px;
+        }
+        .food-title {
+            font-weight: 700;
+            color: #c05621;
+            margin-bottom: 6px;
+        }
+
+        .restaurant-detail {
+            background: #fdf2f8;
+            border: 1px solid #fbcfe8;
+            border-radius: 10px;
+            padding: 12px;
+            margin-top: 8px;
+            font-size: 13px;
+        }
+        .rest-name { font-weight: 700; font-size: 15px; color: #9d174d; }
+        .rest-addr { font-size: 12px; color: #4b5563; margin: 2px 0 6px 0; }
+        
+        .guide-step {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+        .step-num {
+            background: var(--primary);
+            color: white;
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        .step-content { font-size: 13px; }
+        .step-title { font-weight: 700; color: var(--text-dark); }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>🇨🇳 난징 3박 4일 일정 (난징 올인원 코스)</h1>
+        <p>일정 · 입장료 & 예매 정보 · 추천맛집 · 스파 · 지치 지도 동선</p>
+    </div>
+
+    <div class="container">
+
+        <!-- 🏨 숙소 -->
+        <div class="card" style="background: #eff6ff; border-color: #bfdbfe;">
+            <div class="place-name">🏨 숙소: 수닝 유니버설 호텔</div>
+            <div class="cn-name">苏宁环球大酒店 (Suning Universal Hotel)</div>
+            <div class="btn-group">
+                <a class="btn btn-apple" href="https://maps.apple.com/?q=苏宁环球大酒店"> 애플지도</a>
+                <a class="btn btn-amap" href="androidamap://keywordSearch?keyword=苏宁环球大酒店">고덕지도 App</a>
+                <a class="btn btn-web" href="https://uri.amap.com/search?keyword=苏宁环球大酒店">웹 지도</a>
+            </div>
+        </div>
+
+        <!-- 🗓️ 1일차 -->
+        <div class="card">
+            <div class="card-title">🗓️ 1일차 (9/24 목) : 입국 & 야경</div>
+            
+            <div class="item">
+                <span class="time">12:15</span>
+                <div class="place-name">난징 록구 국제공항 도착</div>
+                <div class="cn-name">南京禄口国际机场</div>
+                <div class="desc">🚕 공항 -> 시내(호텔) 이동: 택시 약 100~130위안 (약 20,000~26,000원) / 지하철 S1호선 약 7위안</div>
+                <div class="btn-group">
+                    <a class="btn btn-apple" href="https://maps.apple.com/?q=南京禄口国际机场"> 애플지도</a>
+                    <a class="btn btn-amap" href="androidamap://keywordSearch?keyword=南京禄口国际机场">고덕지도 App</a>
+                    <a class="btn btn-web" href="https://uri.amap.com/search?keyword=南京禄口国际机场">웹 지도</a>
+                </div>
+            </div>
+
+            <div class="item">
+                <span class="time">15:30 ~ 18:00</span>
+                <div class="place-name">1912 거리</div>
+                <div class="cn-name">南京1912街区</div>
+                <div class="desc">🚕 호텔에서 택시 약 10~15분 (3.5km)<br>민국 시기 건축 양식의 수제맥주/카페 거리</div>
+                <div>
+                    <span class="info-badge">🎟️ 입장료: 무료</span>
+                    <span class="booking-badge">📲 예매: 불필요 (자유 방문)</span>
+                </div>
+                <div class="btn-group">
+                    <a class="btn btn-apple" href="https://maps.apple.com/?q=南京1912街区"> 애플지도</a>
+                    <a class="btn btn-amap" href="androidamap://keywordSearch?keyword=南京1912街区">고덕지도 App</a>
+                    <a class="btn btn-web" href="https://uri.amap.com/search?keyword=南京1912街区">웹 지도</a>
+                </div>
+            </div>
+
+            <div class="item">
+                <span class="time">18:30 ~ 21:00</span>
+                <div class="place-name">부자묘 & 진회하 야경</div>
+                <div class="cn-name">夫子庙 / 秦淮河</div>
+                <div class="desc">🚇 지하철 3호선 이용 (약 15분)<br>난징 대표 야경 명소, 진회하 유람선 추천</div>
+                <div>
+                    <span class="info-badge">🎟️ 거리/호수 입장료: 무료 (유람선: 야간 약 100위안/20,000원)</span><br>
+                    <span class="booking-badge">📲 유람선 예매: 현장 매표소 또는 씨트립(Ctrip)/위챗 미니프로그램</span>
+                </div>
+                <div class="btn-group">
+                    <a class="btn btn-apple" href="https://maps.apple.com/?q=夫子庙"> 애플지도</a>
+                    <a class="btn btn-amap" href="androidamap://keywordSearch?keyword=夫子庙">고덕지도 App</a>
+                    <a class="btn btn-web" href="https://uri.amap.com/search?keyword=夫子庙">웹 지도</a>
+                </div>
+            </div>
+
+            <!-- 🍽️ 1일차 추천 맛집 -->
+            <div class="food-box">
+                <div class="food-title">🍽️ 1일차 저녁 추천 맛집</div>
+                <div class="restaurant-detail">
+                    <div class="rest-name">🏮 남경대패당 부자묘점 (南京大排档 夫子庙平江府店)</div>
+                    <div class="rest-addr">📍 주소: 南京市秦淮区贡院街84号 (부자묘 거리 내)</div>
+                    <div class="desc" style="margin: 4px 0 8px 0; background: #ffffff;">난징 전통 향토 음식 전문점. 민속 공연과 함께 오리 요리, 당면국수, 소룡포 등 다채로운 난징 요리를 경험할 수 있습니다. (예산: 1인당 약 60~80위안 / 12,000~16,000원)</div>
+                    <div class="btn-group">
+                        <a class="btn btn-apple" href="https://maps.apple.com/?q=南京大排档夫子庙平江府店"> 애플지도</a>
+                        <a class="btn btn-amap" href="androidamap://keywordSearch?keyword=南京大排档夫子庙平江府店">고덕지도 App</a>
+                        <a class="btn btn-web" href="https://uri.amap.com/search?keyword=南京大排档夫子庙平江府店">웹 지도</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 🗓️ 2일차 -->
+        <div class="card">
+            <div class="card-title">🗓️ 2일차 (9/25 금) : 난징 핵심 탐방</div>
+
+            <div class="item">
+                <span class="time">08:30 ~ 12:00</span>
+                <div class="place-name">우수산 불정궁</div>
+                <div class="cn-name">牛首山文化旅游区 (佛顶宫)</div>
+                <div class="desc">🚕 호텔에서 택시 약 35~40분 (22km)<br>지하 6층 규모의 웅장한 불교 건축 예술</div>
+                <div>
+                    <span class="info-badge">🎟️ 입장료 + 내부 셔틀버스: 약 160위안 (약 32,000원)</span><br>
+                    <span class="booking-badge">📲 예매처: **트립닷컴(Trip.com)** 또는 **클룩(Klook)** (한국어 지원, 모바일 QR 입장)</span>
+                </div>
+                <div class="btn-group">
+                    <a class="btn btn-apple" href="https://maps.apple.com/?q=牛首山文化旅游区"> 애플지도</a>
+                    <a class="btn btn-amap" href="androidamap://keywordSearch?keyword=牛首山文化旅游区">고덕지도 App</a>
+                    <a class="btn btn-web" href="https://uri.amap.com/search?keyword=牛首山文化旅游区">웹 지도</a>
+                </div>
+            </div>
+
+            <div class="item">
+                <span class="time">12:30 ~ 15:30</span>
+                <div class="place-name">홍산 삼림동물원</div>
+                <div class="cn-name">红山森林动物园</div>
+                <div class="desc">🚕 우수산에서 택시 약 35분 (25km)<br>자연 친화적 환경의 인기 동물원</div>
+                <div>
+                    <span class="info-badge">🎟️ 입장료: 40위안 (약 8,000원)</span><br>
+                    <span class="booking-badge">📲 예매처: 현장 매표소 키오스크 구매 또는 위챗 미니프로그램</span>
+                </div>
+                <div class="btn-group">
+                    <a class="btn btn-apple" href="https://maps.apple.com/?q=红山森林动物园"> 애플지도</a>
+                    <a class="btn btn-amap" href="androidamap://keywordSearch?keyword=红山森林动物园">고덕지도 App</a>
+                    <a class="btn btn-web" href="https://uri.amap.com/search?keyword=红山森林动物园">웹 지도</a>
+                </div>
+            </div>
+
+            <div class="item">
+                <span class="time">16:00 ~ 18:00</span>
+                <div class="place-name">오동나무 가로수길 (릉원로)</div>
+                <div class="cn-name">陵园路</div>
+                <div class="desc">🚕 동물원에서 택시 약 20분 (10km)<br>거대한 오동나무 터널 거리</div>
+                <div>
+                    <span class="info-badge">🎟️ 입장료: 무료</span>
+                    <span class="booking-badge">📲 예매: 불필요 (자유 산책)</span>
+                </div>
+                <div class="btn-group">
+                    <a class="btn btn-apple" href="https://maps.apple.com/?q=陵园路"> 애플지도</a>
+                    <a class="btn btn-amap" href="androidamap://keywordSearch?keyword=陵园路">고덕지도 App</a>
+                    <a class="btn btn-web" href="https://uri.amap.com/search?keyword=陵园路">웹 지도</a>
+                </div>
+            </div>
+
+            <div class="item">
+                <span class="time">18:30 ~ 21:00</span>
+                <div class="place-name">신제커우 시내 산책 & 저녁</div>
+                <div class="cn-name">新街口</div>
+                <div class="desc">🚇 지하철 2호선 이용 (약 20분)<br>난징 최대 쇼핑 중심지</div>
+                <div class="btn-group">
+                    <a class="btn btn-apple" href="https://maps.apple.com/?q=新街口"> 애플지도</a>
+                    <a class="btn btn-amap" href="androidamap://keywordSearch?keyword=新街口">고덕지도 App</a>
+                    <a class="btn btn-web" href="https://uri.amap.com/search?keyword=新街口">웹 지도</a>
+                </div>
+            </div>
+
+            <!-- 🍽️ 2일차 추천 맛집 -->
+            <div class="food-box">
+                <div class="food-title">🍽️ 2일차 저녁 추천 맛집</div>
+                <div class="restaurant-detail">
+                    <div class="rest-name">🍢 헌지우이치엔 양꼬치 신제커우점 (很久以前羊肉串 新街口店)</div>
+                    <div class="rest-addr">📍 주소: 南京市秦淮区中山南路101号 金鹰风尚中心4楼</div>
+                    <div class="desc" style="margin: 4px 0 8px 0; background: #ffffff;">중국 최고 인기 프리미엄 양꼬치 브랜드. 숯불 자동 구이와 깔끔한 서비스! (예산: 1인당 약 120~150위안 / 24,000~30,000원)</div>
+                    <div class="btn-group">
+                        <a class="btn btn-apple" href="https://maps.apple.com/?q=很久以前羊肉串新街口店"> 애플지도</a>
+                        <a class="btn btn-amap" href="androidamap://keywordSearch?keyword=很久以前羊肉串新街口店">고덕지도 App</a>
+                        <a class="btn btn-web" href="https://uri.amap.com/search?keyword=很久以前羊肉串新街口店">웹 지도</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 🗓️ 3일차 -->
+        <div class="card">
+            <div class="card-title">🗓️ 3일차 (9/26 토) : 난징 시내 탐방 & 힐링</div>
+
+            <div class="item">
+                <span class="time">09:30 ~ 12:00</span>
+                <div class="place-name">난징 박물원</div>
+                <div class="cn-name">南京博物院</div>
+                <div class="desc">🚇 지하철 2호선 이용<br>중국 3대 박물관! 지하 **'민국 거리(民國街)'** 레트로 포토존 필수</div>
+                <div>
+                    <span class="info-badge">🎟️ 입장료: **무료**</span><br>
+                    <span class="booking-badge">📲 예매처: **위챗 미니프로그램 (南京博物院)** 전용 사전 예약 (방문 2~3일 전 필수!)</span>
+                </div>
+                <div class="btn-group">
+                    <a class="btn btn-apple" href="https://maps.apple.com/?q=南京博物院"> 애플지도</a>
+                    <a class="btn btn-amap" href="androidamap://keywordSearch?keyword=南京博物院">고덕지도 App</a>
+                    <a class="btn btn-web" href="https://uri.amap.com/search?keyword=南京博物院">웹 지도</a>
+                </div>
+            </div>
+
+            <!-- 🍽️ 3일차 점심 : 점도덕 -->
+            <div class="food-box" style="margin-bottom: 16px;">
+                <div class="food-title">🍽️ 3일차 점심 추천 맛집 (점도덕 딤섬)</div>
+                <div class="restaurant-detail">
+                    <div class="rest-name">🥟 점도덕 광저우路점 / 덕기광장점 (点都德)</div>
+                    <div class="rest-addr">📍 주소: 南京市鼓楼区广州路 (또는 新街口 德基广场점)</div>
+                    <div class="desc" style="margin: 4px 0 8px 0; background: #ffffff;">광둥식 수제 딤섬 명가! 하가우, 창펀, 에그타르트 등 만인 인증 맛집 (예산: 1인당 약 80~110위안 / 16,000~22,000원)</div>
+                    <div class="btn-group">
+                        <a class="btn btn-apple" href="https://maps.apple.com/?q=点都德南京"> 애플지도</a>
+                        <a class="btn btn-amap" href="androidamap://keywordSearch?keyword=点都德南京">고덕지도 App</a>
+                        <a class="btn btn-web" href="https://uri.amap.com/search?keyword=点都德南京">웹 지도</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 💆 3일차 오후 : 스파 / 발마사지 추천 -->
+            <div class="item">
+                <span class="time">13:30 ~ 15:30</span>
+                <div class="place-name">릴렉스 마사지 & 족역 SPA</div>
+                <div class="cn-name">릴렉스 SPA / 정원원 족도 (郑远元)</div>
+                <div class="desc">💆 여행 피로를 푸는 전신/발마사지 타임! 코스별 이용 가격 명시</div>
+                
+                <div class="restaurant-detail" style="background: #f0fdf4; border-color: #bbf7d0;">
+                    <div class="rest-name" style="color: #15803d;">💆 1. 정원원 족도 신제커우점 (郑远元专业修脚房)</div>
+                    <div class="rest-addr">📍 주소: 南京市秦淮区中山南路 (신제커우 상권 연계)</div>
+                    <div class="desc" style="margin: 4px 0 6px 0; background: #ffffff;">중국 최고의 가성비 & 위생 발마사지/어깨 지압 대형 체인점.<br>
+                    <b>💵 가격:</b> 기본 발마사지/어깨 약 60~100위안 (약 12,000~20,000원)<br>
+                    <b>📲 예매/현장:</b> 현장 방문 또는 따중뎬핑(大众点评) 쿠폰 결제 가능</div>
+                    <div class="btn-group">
+                        <a class="btn btn-apple" href="https://maps.apple.com/?q=郑远元南京"> 애플지도</a>
+                        <a class="btn btn-amap" href="androidamap://keywordSearch?keyword=郑远元南京">고덕지도 App</a>
+                        <a class="btn btn-web" href="https://uri.amap.com/search?keyword=郑远元南京">웹 지도</a>
+                    </div>
+                </div>
+
+                <div class="restaurant-detail" style="background: #f0fdf4; border-color: #bbf7d0; margin-top: 8px;">
+                    <div class="rest-name" style="color: #15803d;">🎬 2. 프리미엄 영화관형 족역 SPA (名仕足道 / 高端足道)</div>
+                    <div class="rest-addr">📍 주소: 南京市鼓楼区 广州路 / 新街口 일대</div>
+                    <div class="desc" style="margin: 4px 0 6px 0; background: #ffffff;">프라이빗 룸 영화 관람 + 마사지 + 음료/다과 무제한 제공.<br>
+                    <b>💵 가격:</b> 60~90분 코스 약 150~220위안 (약 30,000~44,000원)<br>
+                    <b>📲 예매/현장:</b> 현장 방문 또는 따중뎬핑(大众点评) 사전 예약</div>
+                    <div class="btn-group">
+                        <a class="btn btn-apple" href="https://maps.apple.com/?q=南京名仕足道"> 애플지도</a>
+                        <a class="btn btn-amap" href="androidamap://keywordSearch?keyword=南京名仕足道">고덕지도 App</a>
+                        <a class="btn btn-web" href="https://uri.amap.com/search?keyword=南京名仕足道">웹 지도</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="item">
+                <span class="time">16:00 ~ 18:30</span>
+                <div class="place-name">현무호 공원 산책</div>
+                <div class="cn-name">玄武湖公园</div>
+                <div class="desc">🚇 지하철 1호선 현무门역 연계<br>난징의 랜드마크 도심 호수 공원, 일몰 감상</div>
+                <div>
+                    <span class="info-badge">🎟️ 공원 입장료: 무료 (오리배/유람선 이용 시 약 50위안)</span><br>
+                    <span class="booking-badge">📲 예매: 불필요 (자유 입장)</span>
+                </div>
+                <div class="btn-group">
+                    <a class="btn btn-apple" href="https://maps.apple.com/?q=玄武湖公园"> 애플지도</a>
+                    <a class="btn btn-amap" href="androidamap://keywordSearch?keyword=玄武湖公园">고덕지도 App</a>
+                    <a class="btn btn-web" href="https://uri.amap.com/search?keyword=玄武湖公园">웹 지도</a>
+                </div>
+            </div>
+
+            <!-- 🍽️ 3일차 저녁 : 용가훠궈 -->
+            <div class="food-box">
+                <div class="food-title">🍽️ 3일차 저녁 추천 맛집 (용가훠궈)</div>
+                <div class="restaurant-detail">
+                    <div class="rest-name">🍲 용가훠궈 난징점 (涌家火锅 / 雍家老火锅)</div>
+                    <div class="rest-addr">📍 주소: 南京市秦淮区 / 鼓楼区 주요 상권 지점</div>
+                    <div class="desc" style="margin: 4px 0 8px 0; background: #ffffff;">깊고 매콤한 육수와 신선한 고기! 하루 일정을 마친 후 깔끔하고 얼큰하게 즐기기 최적의 훠궈 코스 (예산: 1인당 약 120~160위안 / 24,000~32,000원)</div>
+                    <div class="btn-group">
+                        <a class="btn btn-apple" href="https://maps.apple.com/?q=涌家火锅南京"> 애플지도</a>
+                        <a class="btn btn-amap" href="androidamap://keywordSearch?keyword=涌家火锅南京">고덕지도 App</a>
+                        <a class="btn btn-web" href="https://uri.amap.com/search?keyword=涌家火锅南京">웹 지도</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 🗓️ 4일차 -->
+        <div class="card">
+            <div class="card-title">🗓️ 4일차 (9/27 일) : 귀국</div>
+            <div class="item">
+                <span class="time">12:00 ~ 13:00</span>
+                <div class="place-name">공항 이동 & 귀국</div>
+                <div class="cn-name">南京禄口国际机场</div>
+                <div class="desc">🚕 호텔에서 택시 약 40~45분 소요 (15:25 비행기)</div>
+                <div class="btn-group">
+                    <a class="btn btn-apple" href="https://maps.apple.com/?q=南京禄口国际机场"> 애플지도</a>
+                    <a class="btn btn-amap" href="androidamap://keywordSearch?keyword=南京禄口国际机场">고덕지도 App</a>
+                    <a class="btn btn-web" href="https://uri.amap.com/search?keyword=南京禄口国际机场">웹 지도</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 💡 예매 꿀팁 요약 -->
+        <div class="card">
+            <div class="card-title">📌 관광지 예매 & 비용 요약 꿀팁</div>
+            
+            <div class="guide-step">
+                <div class="step-num">1</div>
+                <div class="step-content">
+                    <div class="step-title">난징 박물원 (무료 / 필수 예약)</div>
+                    입장료는 **무료**이지만, 방문 **2~3일 전 위챗 미니프로그램(南京博物院)**을 통해 미리 예약해야만 입장이 가능합니다.
+                </div>
+            </div>
+
+            <div class="guide-step">
+                <div class="step-num">2</div>
+                <div class="step-content">
+                    <div class="step-title">우수산 불정궁 (한국 플랫폼 예매 권장)</div>
+                    입장권+셔틀버스 포함 패키지는 **트립닷컴(Trip.com) 또는 클룩(Klook)**에서 사전 예매하면 한국어 지원 및 모바일 QR코드로 현장에서 가장 빠르게 입장할 수 있습니다.
+                </div>
+            </div>
+
+            <div class="guide-step">
+                <div class="step-num">3</div>
+                <div class="step-content">
+                    <div class="step-title">홍산동물원 (현장 구매 가능)</div>
+                    입장료 40위안(약 8,000원)으로 현장 무인 매표소나 키오스크에서 알리페이/위챗페이로 즉시 구매 가능합니다.
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
